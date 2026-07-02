@@ -37,7 +37,7 @@ function Hero() {
               </Box>
 
               <Typography variant="h2" className="hero-title">
-                Revolutionizing Healthcare Through
+                one Platform for the Entire HealthCare Ecosystem
                 <span> AI Innovation</span>
               </Typography>
 
