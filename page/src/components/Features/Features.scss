@@ -1,0 +1,89 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.features-section {
+  padding: 100px 0;
+  background: #f8fbff;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  color: #0f172a;
+  margin-bottom: 18px !important;
+}
+
+.section-description {
+  max-width: 760px;
+  margin: 0 auto 70px !important;
+  text-align: center;
+  color: #64748b;
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+}
+
+.feature-card {
+  height: 100%;
+  border-radius: 18px !important;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(24, 169, 153, 0.15) !important;
+  }
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(24, 169, 153, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  svg {
+    font-size: 34px;
+    color: #18a999;
+  }
+}
+
+.feature-title {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #0f172a;
+  margin-bottom: 15px !important;
+}
+
+.feature-text {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #64748b;
+}
+
+@include tablet {
+  .section-heading {
+    font-size: 34px !important;
+  }
+}
+
+@include mobile {
+  .features-section {
+    padding: 70px 0;
+  }
+
+  .section-heading {
+    font-size: 28px !important;
+  }
+
+  .section-description {
+    font-size: 16px !important;
+    margin-bottom: 40px !important;
+  }
+}

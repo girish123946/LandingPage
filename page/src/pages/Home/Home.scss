@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $background-color;
+  overflow-x: hidden;
+}
+
+/* Common Section Styling */
+
+.hero-section,
+.trusted-companies,
+.features-section,
+.services-section,
+.ecosystem-section {
+  width: 100%;
+}
+
+/* Common Container */
+
+.container {
+  @include container;
+}
+
+/* Section Spacing */
+
+.section {
+  @include section-spacing;
+}
+
+/* Responsive */
+
+@include tablet {
+  .home-page {
+    overflow-x: hidden;
+  }
+}
+
+@include mobile {
+  .home-page {
+    overflow-x: hidden;
+  }
+}

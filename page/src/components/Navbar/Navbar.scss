@@ -1,0 +1,145 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.navbar {
+  background-color: $white !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: 10px 0 !important;
+}
+
+.navbar-toolbar {
+  @include flex-between;
+  min-height: 80px !important;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+
+  img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .logo-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #18a999;
+    line-height: 1.2;
+  }
+
+  .logo-subtitle {
+    font-size: 12px;
+    color: $text-secondary;
+    line-height: 1.2;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: $text-primary;
+    font-size: 15px;
+    font-weight: 500;
+    transition: $transition;
+
+    &:hover {
+      color: #18a999;
+    }
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.signup-btn {
+  border: 1px solid #18a999 !important;
+  color: #18a999 !important;
+  padding: 10px 24px !important;
+  border-radius: 10px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+
+  &:hover {
+    background-color: rgba(24, 169, 153, 0.08) !important;
+    border-color: #18a999 !important;
+  }
+}
+
+.login-btn {
+  background-color: #18a999 !important;
+  color: $white !important;
+  padding: 10px 24px !important;
+  border-radius: 10px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+
+  &:hover {
+    background-color: #14897d !important;
+  }
+}
+
+/* Tablet */
+
+@include tablet {
+  .navbar-toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px 0;
+  }
+
+  .navbar-links {
+    gap: 20px;
+
+    a {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Mobile */
+
+@include mobile {
+  .navbar-toolbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar-logo {
+    justify-content: center;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .navbar-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .signup-btn,
+  .login-btn {
+    width: 150px;
+  }
+}

@@ -1,0 +1,89 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.services-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.services-heading {
+  text-align: center;
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  color: #0f172a;
+  margin-bottom: 16px !important;
+}
+
+.services-subtitle {
+  max-width: 720px;
+  margin: 0 auto 60px !important;
+  text-align: center;
+  font-size: 18px !important;
+  color: #64748b;
+  line-height: 1.8 !important;
+}
+
+.service-card {
+  height: 100%;
+  padding: 24px;
+  border-radius: 18px !important;
+  transition: 0.3s;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(24, 169, 153, 0.15) !important;
+  }
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(24, 169, 153, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  svg {
+    color: #18a999;
+    font-size: 34px;
+  }
+}
+
+.service-title {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
+  color: #0f172a;
+}
+
+.service-description {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #64748b;
+}
+
+@include tablet {
+  .services-heading {
+    font-size: 34px !important;
+  }
+}
+
+@include mobile {
+  .services-section {
+    padding: 70px 0;
+  }
+
+  .services-heading {
+    font-size: 28px !important;
+  }
+
+  .services-subtitle {
+    font-size: 16px !important;
+    margin-bottom: 40px !important;
+  }
+}

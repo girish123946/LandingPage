@@ -1,0 +1,128 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+/*==========================================
+  Google Fonts
+==========================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*==========================================
+  Reset
+==========================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*==========================================
+  HTML
+==========================================*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*==========================================
+  Body
+==========================================*/
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-primary;
+  overflow-x: hidden;
+}
+
+/*==========================================
+  Root
+==========================================*/
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/*==========================================
+  Images
+==========================================*/
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*==========================================
+  Links
+==========================================*/
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*==========================================
+  Lists
+==========================================*/
+
+ul,
+ol {
+  list-style: none;
+}
+
+/*==========================================
+  Buttons
+==========================================*/
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/*==========================================
+  Inputs
+==========================================*/
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+/*==========================================
+  Container
+==========================================*/
+
+.container {
+  @include container;
+}
+
+/*==========================================
+  Sections
+==========================================*/
+
+.section {
+  @include section-spacing;
+}
+
+/*==========================================
+  Common Heading
+==========================================*/
+
+.section-title {
+  font-size: $font-4xl;
+  font-weight: $font-bold;
+  color: $text-primary;
+  text-align: center;
+}
+
+.section-subtitle {
+  margin-top: 18px;
+  font-size: $font-lg;
+  color: $text-secondary;
+  text-align: center;
+  line-height: 1.8;
+}
