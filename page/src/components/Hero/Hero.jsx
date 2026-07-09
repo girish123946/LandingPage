@@ -40,8 +40,11 @@ function Hero() {
                 </Typography>
               </Box>
 
-              <Typography variant="h2" className="hero-title">
-                One Platform for the Entire Healthcare Ecosystem
+              <Typography variant="h2" className="hero-title">HEAD
+
+                one Platform for the Entire HealthCare Ecosystem
+                <span> AI Innovation</span>
+
               </Typography>
 
               <Typography className="hero-description">
