@@ -1,0 +1,150 @@
+.testimonials {
+  padding: 90px 0;
+  background: #f8fbfa;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.testimonials-left {
+  width: 300px;
+  min-width: 300px;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.subtitle {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #006d5b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 24px !important;
+}
+
+.title {
+  font-size: 34px !important;
+  font-weight: 700 !important;
+  color: #111827;
+  white-space: nowrap;
+  line-height: 1.2 !important;
+  margin-bottom: 20px !important;
+}
+
+.description {
+  width: 290px;
+  max-width: 290px;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #6b7280;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+.testimonials-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.review-card {
+  padding: 20px !important;
+  border-radius: 18px !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+  min-height: 210px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 18px;
+
+  svg {
+    color: #f4b740;
+    font-size: 18px !important;
+  }
+
+  span {
+    margin-left: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111827;
+  }
+}
+
+.review-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #111827;
+  margin-bottom: 12px !important;
+}
+
+.review-text {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #4b5563;
+  margin-bottom: 22px !important;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .MuiAvatar-root {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+.user-name {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #111827;
+}
+
+.user-role {
+  font-size: 13px !important;
+  color: #6b7280;
+}
+
+/* Tablet */
+
+@media (max-width: 1200px) {
+  .testimonials-wrapper {
+    flex-direction: column;
+  }
+
+  .testimonials-left {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .description {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .testimonials-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .testimonials-right {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    white-space: normal;
+    font-size: 28px !important;
+  }
+}

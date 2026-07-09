@@ -1,5 +1,3 @@
-// src/components/Ecosystem/Ecosystem.jsx
-
 import { Container, Typography, Grid, Button, Card, CardContent } from "@mui/material";
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";

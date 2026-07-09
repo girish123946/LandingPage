@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "sass-embedded": "^1.100.0"
-  },
-  "dependencies": {
-    "@mui/icons-material": "^9.1.1"
-  }
-}

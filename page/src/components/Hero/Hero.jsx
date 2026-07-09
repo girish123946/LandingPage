@@ -22,23 +22,26 @@ function Hero() {
   return (
     <section className="hero-section">
       <Container maxWidth="xl">
-        <Grid container spacing={6} alignItems="center">
-
+        <Grid
+          container
+          spacing={6}
+          sx={{
+            alignItems: "center",
+          }}
+        >
           {/* Left Content */}
-
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box className="hero-content">
-
               <Box className="hero-badge">
                 <VerifiedOutlinedIcon />
+
                 <Typography>
                   AI-Powered Healthcare Ecosystem
                 </Typography>
               </Box>
 
               <Typography variant="h2" className="hero-title">
-                One Platform for the Entire HealthCare Ecosystem
-               
+                One Platform for the Entire Healthcare Ecosystem
               </Typography>
 
               <Typography className="hero-description">
@@ -66,7 +69,6 @@ function Hero() {
               </Box>
 
               <Box className="hero-features">
-
                 <Box className="feature-item">
                   <VerifiedOutlinedIcon />
                   <Typography>100% Secure</Typography>
@@ -86,29 +88,21 @@ function Hero() {
                   <VerifiedOutlinedIcon />
                   <Typography>Trusted Doctors</Typography>
                 </Box>
-
               </Box>
-
             </Box>
           </Grid>
 
-          {/* Right Image */}
-
-          <Grid item xs={12} md={6}>
-
+          {/* Right Content */}
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box className="hero-image">
-
               <img
                 src={heroImage}
                 alt="Healthcare"
               />
 
-              {/* Floating Card 1 */}
-
+              {/* Doctor Card */}
               <Card className="floating-card doctor-card">
-
                 <CardContent>
-
                   <LocalHospitalOutlinedIcon />
 
                   <Typography variant="h6">
@@ -118,17 +112,12 @@ function Hero() {
                   <Typography>
                     10,000+ Specialists
                   </Typography>
-
                 </CardContent>
-
               </Card>
 
-              {/* Floating Card 2 */}
-
+              {/* Consultation Card */}
               <Card className="floating-card consult-card">
-
                 <CardContent>
-
                   <VideoCallOutlinedIcon />
 
                   <Typography variant="h6">
@@ -138,17 +127,12 @@ function Hero() {
                   <Typography>
                     Instant Video Consultation
                   </Typography>
-
                 </CardContent>
-
               </Card>
 
-              {/* Floating Card 3 */}
-
+              {/* Lab Card */}
               <Card className="floating-card lab-card">
-
                 <CardContent>
-
                   <ScienceOutlinedIcon />
 
                   <Typography variant="h6">
@@ -158,15 +142,10 @@ function Hero() {
                   <Typography>
                     Book Tests Near You
                   </Typography>
-
                 </CardContent>
-
               </Card>
-
             </Box>
-
           </Grid>
-
         </Grid>
       </Container>
     </section>

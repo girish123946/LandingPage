@@ -1,4 +1,3 @@
-
 import {
   Container,
   Paper,
@@ -7,6 +6,7 @@ import {
   MenuItem,
   Chip,
   InputAdornment,
+  Box,
 } from "@mui/material";
 
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -41,83 +41,73 @@ function SearchSection() {
   return (
     <section className="search-section">
       <Container maxWidth="xl">
-
         <Paper
           elevation={0}
           className="search-section__box"
         >
-
-          <div className="search-section__location">
-
+          <Box className="search-section__location">
             <TextField
               select
               fullWidth
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               className="location-field"
-              SelectProps={{
-                IconComponent: KeyboardArrowDownOutlinedIcon,
-              }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <LocationOnOutlinedIcon />
-                  </InputAdornment>
-                ),
+              slotProps={{
+                select: {
+                  IconComponent: KeyboardArrowDownOutlinedIcon,
+                },
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LocationOnOutlinedIcon />
+                    </InputAdornment>
+                  ),
+                },
               }}
             >
               {locations.map((item) => (
-                <MenuItem
-                  key={item}
-                  value={item}
-                >
+                <MenuItem key={item} value={item}>
                   {item}
                 </MenuItem>
               ))}
             </TextField>
+          </Box>
 
-          </div>
-
-          <div className="search-section__input">
-
+          <Box className="search-section__input">
             <TextField
               fullWidth
               placeholder="Search Doctors, Specialities, Clinics and Hospitals..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="search-field"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchOutlinedIcon />
-                  </InputAdornment>
-                ),
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchOutlinedIcon />
+                    </InputAdornment>
+                  ),
+                },
               }}
             />
+          </Box>
 
-          </div>
-
-          <div className="search-section__button">
-
+          <Box className="search-section__button">
             <Button
               variant="contained"
               className="search-btn"
             >
               Search
             </Button>
-
-          </div>
-
+          </Box>
         </Paper>
 
-        <div className="popular-search">
-
+        <Box className="popular-search">
           <h3 className="popular-search__title">
             Popular Searches:
           </h3>
 
-          <div className="popular-search__chips">
-
+          <Box className="popular-search__chips">
             {popularSearches.map((item) => (
               <Chip
                 key={item}
@@ -126,11 +116,8 @@ function SearchSection() {
                 variant="outlined"
               />
             ))}
-
-          </div>
-
-        </div>
-
+          </Box>
+        </Box>
       </Container>
     </section>
   );

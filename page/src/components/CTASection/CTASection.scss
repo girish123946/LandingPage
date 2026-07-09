@@ -1,0 +1,148 @@
+.cta-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.cta-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-width: 620px;
+    object-fit: contain;
+  }
+}
+
+.cta-content {
+  max-width: 470px;
+
+  /* Move content slightly down to match reference */
+  margin-left: 20px;
+  padding-top: 60px;
+}
+
+.cta-title {
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -1px;
+
+  color: #0f172a;
+
+  margin-bottom: 22px !important;
+}
+
+.cta-description {
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+
+  color: #64748b;
+
+  margin-bottom: 38px !important;
+}
+
+.appointment-btn {
+  width: 380px;
+  height: 60px;
+
+  background: #159570 !important;
+  color: #ffffff !important;
+
+  border-radius: 12px !important;
+  text-transform: none !important;
+
+  font-size: 18px !important;
+  font-weight: 600 !important;
+
+  margin-bottom: 18px !important;
+
+  &:hover {
+    background: #128363 !important;
+  }
+
+  svg {
+    font-size: 22px !important;
+  }
+}
+
+.consult-btn {
+  width: 380px;
+  height: 60px;
+
+  border: 2px solid #159570 !important;
+  color: #159570 !important;
+
+  border-radius: 12px !important;
+  text-transform: none !important;
+
+  font-size: 18px !important;
+  font-weight: 600 !important;
+
+  &:hover {
+    background: rgba(21, 149, 112, 0.05) !important;
+    border: 2px solid #159570 !important;
+  }
+
+  svg {
+    font-size: 22px !important;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .cta-content {
+    margin-left: 0;
+    padding-top: 20px;
+  }
+
+  .cta-title {
+    font-size: 38px !important;
+  }
+
+  .appointment-btn,
+  .consult-btn {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    margin: auto;
+    padding-top: 0;
+  }
+
+  .cta-title {
+    font-size: 32px !important;
+  }
+
+  .cta-description {
+    font-size: 16px !important;
+  }
+
+  .cta-image {
+    margin-bottom: 50px;
+
+    img {
+      max-width: 450px;
+    }
+  }
+
+  .appointment-btn,
+  .consult-btn {
+    width: 100%;
+    height: 56px;
+
+    font-size: 16px !important;
+  }
+}
