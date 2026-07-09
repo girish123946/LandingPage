@@ -1,45 +1,101 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.home-page {
+.home {
   width: 100%;
-  min-height: 100vh;
-  background-color: $background-color;
   overflow-x: hidden;
+  background: $background;
+
+  section {
+    width: 100%;
+  }
+
+  .hero {
+    margin-bottom: 0;
+  }
+
+  .search-section {
+    margin-bottom: 90px;
+  }
+
+  .services {
+    margin-bottom: 20px;
+  }
+
+  .features {
+    margin-bottom: 20px;
+  }
+
+  .ecosystem {
+    margin-bottom: 0;
+  }
 }
 
-/* Common Section Styling */
+/*==============================
+Desktop
+==============================*/
 
-.hero-section,
-.trusted-companies,
-.features-section,
-.services-section,
-.ecosystem-section {
-  width: 100%;
+@include desktop {
+
+  .home {
+
+    .search-section {
+      margin-bottom: 80px;
+    }
+
+    .services,
+    .features {
+      margin-bottom: 15px;
+    }
+
+  }
+
 }
 
-/* Common Container */
-
-.container {
-  @include container;
-}
-
-/* Section Spacing */
-
-.section {
-  @include section-spacing;
-}
-
-/* Responsive */
+/*==============================
+Tablet
+==============================*/
 
 @include tablet {
-  .home-page {
-    overflow-x: hidden;
+
+  .home {
+
+    .search-section {
+      margin-top: 40px;
+      margin-bottom: 70px;
+    }
+
+    .services,
+    .features,
+    .ecosystem {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
   }
+
 }
 
+/*==============================
+Mobile
+==============================*/
+
 @include mobile {
-  .home-page {
-    overflow-x: hidden;
+
+  .home {
+
+    .search-section {
+      margin-top: 35px;
+      margin-bottom: 60px;
+    }
+
+    .services,
+    .features,
+    .ecosystem {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
   }
+
 }

@@ -1,89 +1,174 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.features-section {
-  padding: 100px 0;
-  background: #f8fbff;
+.features {
+  width: 100%;
+  padding: 90px 0;
+  background: #f9fcfc;
+
+  &__header {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: $primary-color;
+    font-size: 15px;
+    font-weight: $bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__title {
+    font-size: 42px;
+    font-weight: $extra-bold;
+    line-height: 1.3;
+    color: $text-primary;
+    margin-bottom: 18px;
+  }
+
+  &__description {
+    max-width: 650px;
+    margin: 0 auto;
+    color: $text-secondary;
+    font-size: 17px;
+    line-height: 1.8;
+  }
 }
 
-.section-heading {
-  text-align: center;
-  font-size: 42px !important;
-  font-weight: 700 !important;
-  color: #0f172a;
-  margin-bottom: 18px !important;
-}
-
-.section-description {
-  max-width: 760px;
-  margin: 0 auto 70px !important;
-  text-align: center;
-  color: #64748b;
-  font-size: 18px !important;
-  line-height: 1.8 !important;
-}
+/* ==========================
+   Feature Card
+========================== */
 
 .feature-card {
   height: 100%;
-  border-radius: 18px !important;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
-  transition: 0.3s;
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: 22px;
+  box-shadow: $shadow-sm;
+  transition: $transition;
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(24, 169, 153, 0.15) !important;
+    box-shadow: $shadow-lg;
+  }
+
+  .MuiCardContent-root {
+    padding: 30px;
+  }
+
+  &__icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: $primary-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+
+    svg {
+      font-size: 34px;
+      color: $primary-color;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: $bold;
+    color: $text-primary;
+    margin-bottom: 14px;
+  }
+
+  &__description {
+    font-size: 15px;
+    color: $text-secondary;
+    line-height: 1.8;
   }
 }
 
-.feature-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: rgba(24, 169, 153, 0.1);
+/* ==========================
+   Grid
+========================== */
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-bottom: 24px;
-
-  svg {
-    font-size: 34px;
-    color: #18a999;
+.features {
+  .MuiGrid-container {
+    row-gap: 28px;
   }
 }
 
-.feature-title {
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  color: #0f172a;
-  margin-bottom: 15px !important;
+/* ==========================
+   Laptop
+========================== */
+
+@include laptop {
+  .features {
+    padding: 80px 0;
+
+    &__title {
+      font-size: 36px;
+    }
+  }
 }
 
-.feature-text {
-  font-size: 16px !important;
-  line-height: 1.8 !important;
-  color: #64748b;
-}
+/* ==========================
+   Tablet
+========================== */
 
 @include tablet {
-  .section-heading {
-    font-size: 34px !important;
+  .features {
+    padding: 70px 0;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
   }
 }
 
+/* ==========================
+   Mobile
+========================== */
+
 @include mobile {
-  .features-section {
-    padding: 70px 0;
+  .features {
+    padding: 60px 0;
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
   }
 
-  .section-heading {
-    font-size: 28px !important;
-  }
+  .feature-card {
+    .MuiCardContent-root {
+      padding: 22px;
+    }
 
-  .section-description {
-    font-size: 16px !important;
-    margin-bottom: 40px !important;
+    &__icon {
+      width: 64px;
+      height: 64px;
+
+      svg {
+        font-size: 30px;
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
   }
 }

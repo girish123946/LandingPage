@@ -1,19 +1,17 @@
-import { Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
-
 import Navbar from "../components/Navbar/Navbar";
+import Home from "../pages/Home/Home";
 
 import "./MainLayout.scss";
 
 function MainLayout() {
   return (
-    <Box className="main-layout">
+    <div className="main-layout">
       <Navbar />
 
-      <main className="main-content">
-        <Outlet />
+      <main className="main-layout__content">
+        <Home />
       </main>
-    </Box>
+    </div>
   );
 }
 

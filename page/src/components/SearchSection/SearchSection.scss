@@ -1,0 +1,212 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.search-section {
+  width: 100%;
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+    background: $white;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    border: 1px solid $border-color;
+  }
+
+  &__location {
+    width: 250px;
+  }
+
+  &__input {
+    flex: 1;
+  }
+
+  &__button {
+    width: 180px;
+  }
+}
+
+/*=============================
+TextField
+==============================*/
+
+.location-field,
+.search-field {
+
+  .MuiOutlinedInput-root {
+    height: 58px;
+    border-radius: 14px;
+
+    fieldset {
+      border-color: #d8dce2;
+    }
+
+    &:hover fieldset {
+      border-color: $primary-color;
+    }
+
+    &.Mui-focused fieldset {
+      border-color: $primary-color;
+    }
+  }
+
+  .MuiInputBase-input {
+    font-size: 15px;
+    color: $text-primary;
+  }
+
+  svg {
+    color: $primary-color;
+  }
+}
+
+/*=============================
+Search Button
+==============================*/
+
+.search-btn {
+  width: 100%;
+  height: 58px;
+  background: $primary-color !important;
+  color: $white !important;
+  border-radius: 14px !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+
+  &:hover {
+    background: $primary-dark !important;
+  }
+}
+
+/*=============================
+Popular Search
+==============================*/
+
+.popular-search {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__chips {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
+
+.popular-chip {
+  background: #f7f9fb !important;
+  border: 1px solid #dce3e9 !important;
+  color: $text-secondary !important;
+  border-radius: 50px !important;
+  padding: 8px 14px !important;
+  font-size: 14px !important;
+  transition: $transition;
+
+  &:hover {
+    background: $primary-light !important;
+    color: $primary-color !important;
+    border-color: $primary-color !important;
+  }
+}
+
+/*=============================
+Laptop
+==============================*/
+
+@include laptop {
+
+  .search-section {
+
+    &__location {
+      width: 220px;
+    }
+
+    &__button {
+      width: 150px;
+    }
+  }
+}
+
+/*=============================
+Tablet
+==============================*/
+
+@include tablet {
+
+  .search-section {
+
+    margin-top: 40px;
+
+    &__box {
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px;
+    }
+
+    &__location,
+    &__input,
+    &__button {
+      width: 100%;
+    }
+  }
+
+  .popular-search {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/*=============================
+Mobile
+==============================*/
+
+@include mobile {
+
+  .search-section {
+
+    &__box {
+      padding: 16px;
+      border-radius: 16px;
+    }
+  }
+
+  .location-field,
+  .search-field {
+
+    .MuiOutlinedInput-root {
+      height: 54px;
+    }
+  }
+
+  .search-btn {
+    height: 54px;
+  }
+
+  .popular-search {
+
+    &__title {
+      width: 100%;
+    }
+
+    &__chips {
+      justify-content: center;
+    }
+  }
+}

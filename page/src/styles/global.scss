@@ -1,128 +1,186 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-/*==========================================
-  Google Fonts
-==========================================*/
+/* ===============================
+   Google Font
+================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
-/*==========================================
-  Reset
-==========================================*/
+/* ===============================
+   Reset
+================================ */
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*==========================================
-  HTML
-==========================================*/
+/* ===============================
+   HTML
+================================ */
 
 html {
   scroll-behavior: smooth;
 }
 
-/*==========================================
-  Body
-==========================================*/
+/* ===============================
+   Body
+================================ */
 
 body {
   font-family: $font-family;
-  background-color: $background-color;
+  background: $background;
   color: $text-primary;
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
-/*==========================================
-  Root
-==========================================*/
+/* ===============================
+   Root
+================================ */
 
 #root {
   width: 100%;
   min-height: 100vh;
 }
 
-/*==========================================
-  Images
-==========================================*/
+/* ===============================
+   Images
+================================ */
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
-/*==========================================
-  Links
-==========================================*/
+/* ===============================
+   Anchor
+================================ */
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/*==========================================
-  Lists
-==========================================*/
+/* ===============================
+   List
+================================ */
 
 ul,
 ol {
   list-style: none;
 }
 
-/*==========================================
-  Buttons
-==========================================*/
+/* ===============================
+   Button
+================================ */
 
 button {
-  font-family: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
   cursor: pointer;
+  font-family: inherit;
 }
 
-/*==========================================
-  Inputs
-==========================================*/
+/* ===============================
+   Input
+================================ */
 
 input,
 textarea,
 select {
-  font-family: inherit;
   outline: none;
+  font-family: inherit;
 }
 
-/*==========================================
-  Container
-==========================================*/
+/* ===============================
+   Headings
+================================ */
 
-.container {
-  @include container;
-}
-
-/*==========================================
-  Sections
-==========================================*/
-
-.section {
-  @include section-spacing;
-}
-
-/*==========================================
-  Common Heading
-==========================================*/
-
-.section-title {
-  font-size: $font-4xl;
-  font-weight: $font-bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $text-primary;
-  text-align: center;
+  font-weight: $bold;
 }
 
-.section-subtitle {
-  margin-top: 18px;
-  font-size: $font-lg;
+/* ===============================
+   Paragraph
+================================ */
+
+p {
   color: $text-secondary;
-  text-align: center;
-  line-height: 1.8;
+}
+
+/* ===============================
+   Section
+================================ */
+
+section {
+  width: 100%;
+}
+
+/* ===============================
+   Material UI Button
+================================ */
+
+.MuiButton-root {
+  border-radius: $radius-md !important;
+  text-transform: none !important;
+  font-weight: $semi-bold !important;
+  box-shadow: none !important;
+}
+
+/* ===============================
+   Material UI Card
+================================ */
+
+.MuiCard-root {
+  border-radius: $radius-lg !important;
+}
+
+/* ===============================
+   Material UI Container
+================================ */
+
+.MuiContainer-root {
+  max-width: 1320px !important;
+}
+
+/* ===============================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-dark;
+}
+
+/* ===============================
+   Selection
+================================ */
+
+::selection {
+  background: $primary-color;
+  color: $white;
 }

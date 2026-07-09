@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
 /*==========================================
-  Flex Center
+  FLEX
 ==========================================*/
 
 @mixin flex-center {
@@ -10,27 +10,31 @@
   align-items: center;
 }
 
-/*==========================================
-  Flex Between
-==========================================*/
-
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/*==========================================
-  Flex Column
-==========================================*/
-
 @mixin flex-column {
   display: flex;
   flex-direction: column;
 }
 
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 /*==========================================
-  Container
+  CONTAINER
 ==========================================*/
 
 @mixin container {
@@ -41,82 +45,133 @@
 }
 
 /*==========================================
-  Section Spacing
+  SECTION
 ==========================================*/
 
-@mixin section-spacing {
+@mixin section-space {
   padding: 90px 0;
 }
 
 /*==========================================
-  Primary Button
+  BUTTON
 ==========================================*/
 
 @mixin primary-button {
-  background-color: $button-primary;
-  color: $white;
+  height: 54px;
+  padding: 0 28px;
   border: none;
-  border-radius: $radius-round;
-  padding: 14px 28px;
-  font-size: $font-md;
-  font-weight: $font-semibold;
+  border-radius: $radius-md;
+  background: $primary-color;
+  color: $white;
   cursor: pointer;
   transition: $transition;
+  font-size: $font-md;
+  font-weight: $semi-bold;
 
   &:hover {
-    background-color: $button-primary-hover;
+    background: $primary-dark;
   }
 }
-
-/*==========================================
-  Secondary Button
-==========================================*/
 
 @mixin secondary-button {
-  background-color: transparent;
+  height: 54px;
+  padding: 0 28px;
+  border-radius: $radius-md;
+  border: 1px solid $primary-color;
+  background: transparent;
   color: $primary-color;
-  border: 2px solid $primary-color;
-  border-radius: $radius-round;
-  padding: 14px 28px;
-  font-size: $font-md;
-  font-weight: $font-semibold;
   cursor: pointer;
   transition: $transition;
+  font-size: $font-md;
+  font-weight: $semi-bold;
 
   &:hover {
-    background-color: $primary-color;
-    color: $white;
+    background: $primary-light;
   }
 }
 
 /*==========================================
-  Card
+  CARD
 ==========================================*/
 
 @mixin card {
-  background: $white;
+  background: $card-bg;
   border-radius: $radius-lg;
-  box-shadow: $shadow-md;
+  border: 1px solid $border-color;
+  box-shadow: $shadow-sm;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-6px);
+  }
 }
 
 /*==========================================
-  Responsive
+  TITLE
+==========================================*/
+
+@mixin section-title {
+  font-size: $font-4xl;
+  font-weight: $bold;
+  color: $text-primary;
+  line-height: 1.3;
+}
+
+@mixin section-subtitle {
+  color: $primary-color;
+  font-size: $font-sm;
+  font-weight: $bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*==========================================
+  IMAGE
+==========================================*/
+
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin image-contain {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/*==========================================
+  MEDIA QUERIES
 ==========================================*/
 
 @mixin mobile {
-  @media (max-width: 768px) {
+  @media (max-width: $mobile) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (max-width: 992px) {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $laptop) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: 1200px) {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (max-width: $large-desktop) {
     @content;
   }
 }

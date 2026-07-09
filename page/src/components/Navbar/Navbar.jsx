@@ -2,82 +2,85 @@ import {
   AppBar,
   Toolbar,
   Container,
-  Box,
   Button,
+  Box,
   Typography,
 } from "@mui/material";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 
-import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 
 import "./Navbar.scss";
 
 function Navbar() {
   return (
-    <AppBar position="static" className="navbar">
+    <AppBar
+      position="sticky"
+      elevation={0}
+      color="transparent"
+      className="navbar"
+    >
       <Container maxWidth="xl">
-        <Toolbar className="navbar-toolbar">
-
+        <Toolbar className="navbar__wrapper">
           {/* Logo */}
 
-          <Link to="/" className="navbar-logo">
-            <img src={logo} alt="Logo" />
+          <Box className="navbar__logo">
+            <img
+              src={logo}
+              alt="MediConnect"
+              className="navbar__logo-img"
+            />
 
-            <Box>
-              <Typography className="logo-title">
+            <Box className="navbar__logo-content">
+              <Typography className="navbar__brand">
                 MediConnect
               </Typography>
 
-              <Typography className="logo-subtitle">
+              <Typography className="navbar__subtitle">
                 Healthcare Ecosystem
               </Typography>
             </Box>
-          </Link>
+          </Box>
 
-          {/* Navigation */}
+          {/* Menu */}
 
-          <Box className="navbar-links">
+          <Box
+            component="ul"
+            className="navbar__menu"
+          >
+            <li>Home</li>
 
-            <Link to="/">Home</Link>
-
-            <Link to="#">
+            <li>
               Solutions
-              <KeyboardArrowDownIcon className="nav-icon" />
-            </Link>
+              <KeyboardArrowDownIcon fontSize="small" />
+            </li>
 
-            <Link to="#">
+            <li>
               For Patients
-              <KeyboardArrowDownIcon className="nav-icon" />
-            </Link>
+              <KeyboardArrowDownIcon fontSize="small" />
+            </li>
 
-            <Link to="#">
+            <li>
               For Providers
-              <KeyboardArrowDownIcon className="nav-icon" />
-            </Link>
+              <KeyboardArrowDownIcon fontSize="small" />
+            </li>
 
-            <Link to="#">
-              Pricing
-            </Link>
+            <li>Pricing</li>
 
-            <Link to="#">
-              Resources
-            </Link>
-
+            <li>Resources</li>
           </Box>
 
           {/* Buttons */}
 
-          <Box className="navbar-buttons">
-
+          <Box className="navbar__buttons">
             <Button
               variant="outlined"
               className="signup-btn"
               startIcon={<PersonOutlineOutlinedIcon />}
             >
-              Sign up
+              Sign Up
             </Button>
 
             <Button
@@ -87,9 +90,7 @@ function Navbar() {
             >
               Login
             </Button>
-
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,26 +1,18 @@
-import { Box } from "@mui/material";
-
 import Hero from "../../components/Hero/Hero";
-import TrustedCompanies from "../../components/TrustedCompanies/TrustedCompanies";
-import Features from "../../components/Features/Features";
-import Services from "../../components/Services/Services";
+import SearchSection from "../../components/SearchSection/SearchSection";
+import ServiceCards from "../../components/ServiceCards/ServiceCards";
 import Ecosystem from "../../components/Ecosystem/Ecosystem";
 
 import "./Home.scss";
 
 function Home() {
   return (
-    <Box className="home-page">
+    <div className="home">
       <Hero />
-
-      <TrustedCompanies />
-
-      <Features />
-
-      <Services />
-
+      <SearchSection />
+      <ServiceCards />
       <Ecosystem />
-    </Box>
+    </div>
   );
 }
 
